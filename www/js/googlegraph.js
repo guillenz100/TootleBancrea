@@ -6,7 +6,7 @@ var GSTRFIELD1 = "MES";
 var GSTRFIELD2 = "ANTERIOR";
 var GSTRFIELD3 = "";
 var GWIDTH="85%";
-var GURL = "http://www.tootleerp.com/TootleCFDEnterprise/TootleCFDUI/Utilerias/Post.aspx?intEmpresa=1&intConsulta=";
+
 
 var GMAXVALUE = 0;
 var GARR = [];
@@ -62,7 +62,7 @@ function initGraph(){
 function callAjax() {
     loaderspin.start("canvasLoader");
     var intCount = 0;
-    $.post(GURL, { intEmpresa: "1", intConsulta: "37" }, null, "text")
+    $.post(GSERVERURL, { intEmpresa: "1", intConsulta: "37" }, null, "text")
         .done(function(data) {
             data = parseXML(data);
             if(data==null)
