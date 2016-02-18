@@ -44,9 +44,6 @@ function security_call() {
 
         }
     )
-    .fail( function(xhr, textStatus, errorThrown) {
-        alert(xhr.responseText);
-    })
     ;
      
 }

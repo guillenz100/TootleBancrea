@@ -29,6 +29,11 @@
     var GSTRDATOS;
     var GBLINFORMACIONCARGADA=false;
     
+      $( document ).ajaxError(function( event, request, settings ) {
+        utils_alert("Error requesting page " + settings.url);
+        loaderspin.stop();
+      });
+
     GSERVERURL +="17";
     
     function localData(){
@@ -47,9 +52,6 @@
   
     function callAjax() {
         $.post(GSERVERURL, { intEmpresa: "1", intConsulta: "37" }, null, "text")
-           .fail( function(xhr, textStatus, errorThrown) {
-               alert(xhr.responseText);
-           })
             .done(function(data) {
                 data = parseXML(data);
                 if(data==null)

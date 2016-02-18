@@ -15,6 +15,12 @@
     <body>
         
         <script>
+            
+            $( document ).ajaxError(function( event, request, settings ) {
+                utils_alert("Error requesting page " + settings.url);
+                loaderspin.stop();
+              });
+              
              $( document ).ready(function() {
                // $("#txtPassword").focus();
              });
