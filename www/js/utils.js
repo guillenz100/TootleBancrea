@@ -4,9 +4,15 @@
  * and open the template in the editor.
  */
 
-alert(device.uuid);
+
 var GSERVERURL = "http://10.20.1.11/TootleCFD/TootleCFDUI/Utilerias/Post.aspx?intEmpresa=1&intSucursal=56&intConsulta=";
 var GCONSULTADATOSSOLICITUD=19;
+
+document.addEventListener("deviceready", onDeviceReady, false);
+ function onDeviceReady() {
+       alert(device.uuid);
+    }
+
 
 function parseXML(objData) {
     try {
