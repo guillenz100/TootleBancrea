@@ -100,6 +100,9 @@ and open the template in the editor.
                 var serverurl = GSERVERURL+"&action=solicitudcheque_"+sessionStorage.getItem("action")+"&param1="+sessionStorage.getItem("user")+"&param2="+sessionStorage.getItem("password");
                 loaderspin.start("canvasLoader");
                 $.post(serverurl, { intEmpresa: "1", intConsulta: "37" }, null, "text")
+                    .fail( function(xhr, textStatus, errorThrown) {
+                       alert(xhr.responseText);
+                   })
                     .done(function(data) {
                         data = parseXML(data);
                         if(data==null)
