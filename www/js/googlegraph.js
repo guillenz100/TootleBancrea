@@ -55,6 +55,7 @@ function initGraph(){
             GARR_empty.push(['Tipo 1', 'Importe 1', 'Importe 2']);
         }
     }
+    
     google.setOnLoadCallback(callAjax);
 }
 
@@ -62,7 +63,7 @@ function initGraph(){
 function callAjax() {
     loaderspin.start("canvasLoader");
     var intCount = 0;
-    $.post(GSERVERURL, { intEmpresa: "1", intConsulta: "37" }, null, "text")
+    $.post(GSERVERURL, { intEmpresa: "1" }, null, "text")
         .done(function(data) {
             data = parseXML(data);
             if(data==null)
