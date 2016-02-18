@@ -158,7 +158,7 @@ google.load("visualization", "1", { packages: ["table"] });
 
 var previousOrientation = window.orientation;
 function doOnOrientationChange(){
-    if(window.orientation !== previousOrientation){
+    if(window.orientation != previousOrientation){
         previousOrientation = window.orientation;
         init(true);
     }else{
@@ -168,4 +168,5 @@ function doOnOrientationChange(){
 
 window.addEventListener("resize", doOnOrientationChange, false);
 window.addEventListener('orientationchange', doOnOrientationChange);
-setInterval(checkOrientation, 2000);        
+doOnOrientationChange();
+//setInterval(doOnOrientationChange, 2000);        
