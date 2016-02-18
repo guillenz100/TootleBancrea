@@ -118,6 +118,7 @@ function callAjax() {
 
 
 function init(blRotar) {
+    alert("init");
     if (blRotar == null){
         blRotar = false;
     }
